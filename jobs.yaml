@@ -1,0 +1,68 @@
+
+
+
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jobexample-apple
+  labels:
+    jobgroup: jobexample
+spec:
+  template:
+    metadata:
+      name: jobexample
+      labels:
+        jobgroup: jobexample
+    spec:
+      containers:
+      - name: c
+        image: busybox:1.28
+        command: ["sh", "-c", "echo Processing URL http://dbpedia.org/resource/Apple && sleep 5"]
+      restartPolicy: Never
+
+
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jobexample-banana
+  labels:
+    jobgroup: jobexample
+spec:
+  template:
+    metadata:
+      name: jobexample
+      labels:
+        jobgroup: jobexample
+    spec:
+      containers:
+      - name: c
+        image: busybox:1.28
+        command: ["sh", "-c", "echo Processing URL http://dbpedia.org/resource/Banana && sleep 5"]
+      restartPolicy: Never
+
+
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jobexample-cherry
+  labels:
+    jobgroup: jobexample
+spec:
+  template:
+    metadata:
+      name: jobexample
+      labels:
+        jobgroup: jobexample
+    spec:
+      containers:
+      - name: c
+        image: busybox:1.28
+        command: ["sh", "-c", "echo Processing URL http://dbpedia.org/resource/Cherry && sleep 5"]
+      restartPolicy: Never
+
